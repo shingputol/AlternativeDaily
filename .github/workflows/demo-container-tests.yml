@@ -6,7 +6,7 @@ jobs:
   playwright-container-demo:
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright:v1.56.1-focal
+      image: mcr.microsoft.com/playwright:v1.56.1
     steps:
       - uses: actions/checkout@v4
       
