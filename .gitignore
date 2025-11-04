@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Test Results
+test-results/
+playwright-report/
+allure-results/
+allure-report/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# Logs
+*.log

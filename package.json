@@ -1,0 +1,40 @@
+{
+  "name": "playwright-docker-automation",
+  "version": "1.0.0",
+  "description": "Playwright automation with Docker for dynamic purchase flow testing",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:docker": "playwright test --project=chromium",
+    "test:fast": "playwright test ultraliver-pom-fast.spec.js --project=chromium",
+    "test:server": "playwright test && playwright show-report --host=0.0.0.0",
+    "report": "playwright show-report",
+    "install:browsers": "playwright install",
+    "docker:build": "docker-compose build",
+    "docker:test": "docker-compose run --rm playwright-tests",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "docker",
+    "testing",
+    "e2e"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "allure-playwright": "^2.15.1",
+    "dotenv": "^16.3.1"
+  },
+  "dependencies": {
+    "winston": "^3.11.0"
+  }
+}
