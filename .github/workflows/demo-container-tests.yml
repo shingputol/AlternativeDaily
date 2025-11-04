@@ -1,0 +1,21 @@
+﻿name: Demo - Containerized Tests
+on:
+  workflow_dispatch:
+
+jobs:
+  playwright-container-demo:
+    runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.40.0-focal
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Playwright tests in container
+        run: npx playwright test
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: containerized-test-report
+          path: playwright-report/
